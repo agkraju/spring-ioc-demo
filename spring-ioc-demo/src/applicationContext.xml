@@ -7,16 +7,18 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- Bean definitions -->
-	<bean id="address2" class="com.agkr.springiocdemo.Employee$Address2">
-		<constructor-arg value="Telangana"/>
-	</bean>
+	<!-- Bean definitions	-->
 	
+	<bean name="address" class="com.agkr.springiocdemo.Address">
+		<property name="city" value="Hyderabad"/>
+		<property name="state" value="Telangana"/>
+		<property name="pinCode" value="502032"/>
+	</bean>
 	
 	<bean id="employee" class="com.agkr.springiocdemo.Employee">
 		<property name="name" value="Gopi"/>
 		<property name="eid" value="491856"/>
-		<property name="address2" ref="address2"/>
+		<property name="address" ref="address"/>
 	</bean>
 
 	

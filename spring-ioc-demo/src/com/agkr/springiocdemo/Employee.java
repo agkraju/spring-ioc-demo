@@ -4,34 +4,7 @@ public class Employee {
 	private String name;
 	private int eid;
 	private Address address;
-	private Address2 address2;
-	
-	public class Address2 {
 		
-		private String state;
-
-
-		public Address2(String state) {
-			super();
-			System.out.println("Address2 Constructor");
-			this.state = state;
-		}
-
-		public String getState() {
-			return state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		@Override
-		public String toString() {
-			return "Address2 [state=" + state + "]";
-		}
-		
-	}
-	
 	public Employee() {
 		super();
 		System.out.println("Employee Default Contructer!");
@@ -69,17 +42,9 @@ public class Employee {
 	}
 
 	
-	public Address2 getAddress2() {
-		return address2;
-	}
-
-	public void setAddress2(Address2 address2) {
-		this.address2 = address2;
-	}
-
 	@Override
 	public String toString() {
-		return "Employee [name=" + name + ", eid=" + eid + ", address=" + address + ", address2=" + address2 + "]";
+		return "Employee [name=" + name + ", eid=" + eid + ", address=" + address + "]";
 	}
 	
 	
