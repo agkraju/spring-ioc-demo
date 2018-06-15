@@ -17,6 +17,19 @@ public class Employee {
 		this.address = address;
 	}
 
+	// Static Factory method
+	public static Employee createEmployee()	{
+		System.out.println("Static Factory Method");
+		return new Employee();
+	}
+	
+	// Instance Factory method
+	public Address createAddress()	{
+		System.out.println("Non Static Factory Method");
+		System.out.println(address);
+		return address;
+	}
+	
 	public String getName() {
 		return name;
 	}

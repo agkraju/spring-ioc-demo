@@ -15,12 +15,24 @@
 		<property name="pinCode" value="502032"/>
 	</bean>
 	
+	<!-- Creating bean using instance factory method -->
 	<bean id="employee" class="com.agkr.springiocdemo.Employee">
 		<property name="name" value="Gopi"/>
 		<property name="eid" value="491856"/>
 		<property name="address" ref="address"/>
 	</bean>
-
+	
+	<bean id="address2" factory-bean="employee" 
+		factory-method="createAddress">
+	</bean>
+	
+	<!-- Creating bean using instance factory method -->
+	<!-- 
+	<bean id="employee" class="com.agkr.springiocdemo.Employee"
+		factory-method="createEmployee">
+	</bean>
+	-->
+	
 	
 	<!-- alias beans -->
 	<alias name="employee" alias="emp" />
