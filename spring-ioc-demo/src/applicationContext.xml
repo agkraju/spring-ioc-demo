@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Bean definitions -->
+	<bean id="address2" class="com.agkr.springiocdemo.Employee$Address2">
+		<constructor-arg value="Telangana"/>
+	</bean>
+	
+	
+	<bean id="employee" class="com.agkr.springiocdemo.Employee">
+		<property name="name" value="Gopi"/>
+		<property name="eid" value="491856"/>
+		<property name="address2" ref="address2"/>
+	</bean>
+
+	
+	<!-- alias beans -->
+	<alias name="employee" alias="emp" />
+	
+
+</beans>
+
+
+
+
+
