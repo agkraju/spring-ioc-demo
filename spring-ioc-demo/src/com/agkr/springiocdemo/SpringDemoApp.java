@@ -14,7 +14,7 @@ public class SpringDemoApp {
 		// Retrieve the bean from container
 		Employee employee = context.getBean("emp", Employee.class);
 		
-		// Call methods on the bean
+		// Call methods on the bean 
 		System.out.println(employee);
 		
 		// Close context
