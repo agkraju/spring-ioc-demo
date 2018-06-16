@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:p="http://www.springframework.org/schema/p"
     xmlns:context="http://www.springframework.org/schema/context"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -9,24 +10,48 @@
 
 	<!-- Bean definitions	-->
 	
-	<bean name="address" class="com.agkr.springiocdemo.Address">
+	<bean name="address" class="com.agkr.springiocdemo.Address" lazy-init="true">
 		<property name="city" value="Hyderabad"/>
 		<property name="state" value="Telangana"/>
 		<property name="pinCode" value="502032"/>
 	</bean>
 	
-	<!-- Creating bean using instance factory method -->
-	<bean id="employee" class="com.agkr.springiocdemo.Employee">
+	<bean name="employee; emp2" class="com.agkr.springiocdemo.Employee" depends-on="address"
+		p:name="Gopi"
+		p:eid="491856"
+		p:address-ref="address" />
+	
+		
+	<!-- instead of using a reference to a target bean, 
+	simply define the target bean inline 
+	<bean name="employee; emp2" class="com.agkr.springiocdemo.Employee">
 		<property name="name" value="Gopi"/>
 		<property name="eid" value="491856"/>
-		<property name="address" ref="address"/>
+		<property name="address">
+			<bean class="com.agkr.springiocdemo.Address"
+				p:city="Hyderabad"
+				p:state="Telangana"
+				p:pinCode="502032" />
+		</property>
 	</bean>
+	-->
 	
+	<!-- 
+	<bean name="employee; emp2" class="com.agkr.springiocdemo.Employee">
+		<constructor-arg name="name" value="Gopi"/>
+		<constructor-arg name="eid" value="491856"/>
+		<constructor-arg type="Address" ref="address"/>
+	</bean>
+	 -->
+	 
+	<!-- Creating bean using instance factory method -->
+	<!--
 	<bean id="address2" factory-bean="employee" 
 		factory-method="createAddress">
 	</bean>
+	 -->
 	
-	<!-- Creating bean using instance factory method -->
+	<!-- Creating bean using static factory method -->
 	<!-- 
 	<bean id="employee" class="com.agkr.springiocdemo.Employee"
 		factory-method="createEmployee">

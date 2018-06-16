@@ -1,5 +1,7 @@
 package com.agkr.springiocdemo;
 
+import java.beans.ConstructorProperties;
+
 public class Employee {
 	private String name;
 	private int eid;
@@ -9,7 +11,8 @@ public class Employee {
 		super();
 		System.out.println("Employee Default Contructer!");
 	}
-
+	
+	//@ConstructorProperties({"name", "eid", "address"})
 	public Employee(String name, int eid, Address address) {
 		super();
 		this.name = name;
@@ -18,16 +21,22 @@ public class Employee {
 	}
 
 	// Static Factory method
-	public static Employee createEmployee()	{
+	public static Employee createEmployee(String name, int eid, Address address)	{
 		System.out.println("Static Factory Method");
-		return new Employee();
+		Employee employee = new Employee();
+		employee.setName(name);
+		employee.setName(name);
+		employee.setName(name);
+		System.out.println(employee);
+		return employee;
 	}
 	
 	// Instance Factory method
 	public Address createAddress()	{
 		System.out.println("Non Static Factory Method");
-		System.out.println(address);
-		return address;
+		Address address2 = new Address();
+		System.out.println(address2);
+		return address2;
 	}
 	
 	public String getName() {

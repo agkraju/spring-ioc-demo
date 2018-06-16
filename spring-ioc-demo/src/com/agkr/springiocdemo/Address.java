@@ -5,6 +5,14 @@ public class Address {
 	private String city;
 	private int pinCode;
 	
+	private Employee employee;
+		
+	public Address(Employee employee) {
+		super();
+		this.employee = employee;
+		System.out.println("Employee Default Contructer!");
+	}
+
 	public Address() {
 		super();
 		System.out.println("Address Default Contructer!");
@@ -42,6 +50,15 @@ public class Address {
 		this.pinCode = pinCode;
 	}
 	
+	
+	//public Employee getEmployee() {
+		//return employee;
+	//}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
 	@Override
 	public String toString() {
 		return "Address [state=" + state + ", city=" + city + ", pinCode=" + pinCode + "]";
