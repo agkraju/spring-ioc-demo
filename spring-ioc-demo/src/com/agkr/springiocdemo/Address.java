@@ -1,5 +1,8 @@
 package com.agkr.springiocdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class Address {
 	private String state;
 	private String city;
@@ -34,7 +37,9 @@ public class Address {
 		this.state = state;
 	}
 	
+	@PreDestroy
 	public String getCity() {
+		System.out.println("City");
 		return city;
 	}
 	

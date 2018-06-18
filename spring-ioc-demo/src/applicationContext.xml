@@ -10,7 +10,10 @@
 
 	<!-- Bean definitions	-->
 	
-	<bean name="address" class="com.agkr.springiocdemo.Address" lazy-init="true">
+	<context:annotation-config/>
+	
+	<bean name="address" class="com.agkr.springiocdemo.Address" 
+		 scope="prototype">
 		<property name="city" value="Hyderabad"/>
 		<property name="state" value="Telangana"/>
 		<property name="pinCode" value="502032"/>

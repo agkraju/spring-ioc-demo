@@ -15,11 +15,11 @@ public class SpringDemoApp {
 		
 		// Retrieve the bean from container
 		Employee employee = context.getBean("emp2", Employee.class);
-		//Address address2 = context.getBean("address2", Address.class);
+		Address address2 = context.getBean("address", Address.class);
 		
 		// Call methods on the bean 
 		System.out.println(employee);
-		//System.out.println(address2);
+		System.out.println(address2);
 		
 		// Close context
 		((ClassPathXmlApplicationContext) context).close();
